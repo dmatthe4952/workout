@@ -19,7 +19,7 @@ RSpec.feature "Creating Exercises" do
         
         fill_in "Duration", with: 70
         fill_in "Workout Details", with: "Weight lifting"
-        fill_in "Activity date", with: '2015-08-07'
+        fill_in "Activity date", with: 6.days.ago
         
         click_button "Create Exercise"
         
