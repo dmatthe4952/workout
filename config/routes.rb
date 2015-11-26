@@ -6,6 +6,12 @@ Rails.application.routes.draw do
   resources :users do
     resources :exercises 
   end
+  
+  resource :dashboard, only: [:index] do
+    collection do
+      post :search, to: 'dashboard#search'
+    end
+  end
 
   root to: 'dashboard#index'
   
