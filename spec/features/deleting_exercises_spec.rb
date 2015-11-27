@@ -4,7 +4,7 @@ RSpec.feature "Deleting Exercises" do
   
   
   before do
-    @owner = User.create(email: "owner@example.com", password: "password")
+    @owner = User.create(email: "owner@example.com", password: "password", first_name: "John", last_name: "Doe")
     login_as(@owner)
     
     @owner_exer = @owner.exercises.create!(duration_in_min: 45, workout: "Cardio Activity", workout_date: 6.days.ago)
