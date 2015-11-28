@@ -9,9 +9,13 @@ class FriendshipsController < ActionController::Base
   end
   
   def show
+    @friend = Friendship.find(params[:id]).friend
+    @exercises = @friend.exercises.all
   end
   
   def destroy
+    Friendship.find(params[:id]).destroy
+    redirect_to user_exercises_path(current_user)
   end
 
   private 
