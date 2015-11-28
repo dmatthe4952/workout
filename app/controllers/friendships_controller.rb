@@ -14,7 +14,12 @@ class FriendshipsController < ActionController::Base
   end
   
   def destroy
-    Friendship.find(params[:id]).destroy
+    @follow = Friendship.find(params[:id])
+    if @follow.destroy
+      flash[:success]="#{@follow.friend.full_name} unfollowed"
+    else
+      flash[:danger]="#{@follow.friend.full_name} could not be unfollowed"
+    end
     redirect_to user_exercises_path(current_user)
   end
 

@@ -20,8 +20,8 @@
       <%end%>
     </tbody>
   </table>
-  <br>
-  <%= content_tag :div, "", id: "chart", data: {workouts: @exercises} %>
+  <hr>
+  <%= content_tag :div, "", id: "chart", data: {workouts: @exercises}, class: "chart" %>
   <br>
   <%= link_to "Back", user_exercises_path(current_user), class: "btn btn-primary link" %>
 </div>
